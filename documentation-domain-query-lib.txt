@@ -1,0 +1,159 @@
+Help on class DomainQueryDatabase in module __main__:
+
+class DomainQueryDatabase(DomainQueries)
+ |  Class serves as a quasi-DNS cache system, storing results from client queries.
+ |  
+ |  Method resolution order:
+ |      DomainQueryDatabase
+ |      DomainQueries
+ |      builtins.object
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  accept_query(self, query: str, domain: str) -> List[<built-in function any>]
+ |      Function takes a query and domain as arguments and runs that query 
+ |      against the domain, if the query is present in the database's query registry.
+ |      Returns the result of the query as a list. Returns ['unresolved'] if query fails.
+ |      Returns None if query does not exist.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>query</strong>   (<code>str</code>)  the query to run against the database<br>
+ |      - <strong>domain</strong>  (<code>str</code>)  the domain to query<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  get_database(self) -> dict
+ |  
+ |  inventory_clear_all(self) -> None
+ |      Procedure removes all cached information.
+ |  
+ |  inventory_clear_domain(self, domain: str) -> None
+ |      Procedure removes information in cache for a given domain.
+ |  
+ |  inventory_load_domain(self, domain: str) -> None
+ |      Procedure populates a domain entry with all potential query information.
+ |      Does nothing if domain doesn't exist in database.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>    (<code>str</code>)  the domain in the database to populate<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  inventory_new_domain(self, domain: str) -> None
+ |      Procedure will create a new database entry, given a domain name, if 
+ |      it does not already exist.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>    (<code>str</code>)  the domain to add to the database<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from DomainQueries:
+ |  
+ |  asn_formatter(self, *, domain: str, asn_data: dict) -> str
+ |      Function formats network asn data, as retrieved from dictionary captured 
+ |      by the IPWhoIs module, and returns a string.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>    (<code>str</code>)  the domain corresponding to the asn<br>
+ |      - <strong>asn_data</strong>  (<code>dict</code>) the dictionary to format<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  domain_as_fetcher(self, domain: str, container: dict) -> None
+ |      Procedure returns ASN information corresponding to a given domain. Stores the result in the provided
+ |      python dictionary container. Returns <code>['unresolved']</code> on failure.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>        (<code>str</code>)  the domain name to resolve to an ipv4 address<br>
+ |      - <strong>container</strong>     (<code>dict</code>) the result storage structure<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  domain_to_ip(self, domain: str) -> List[str]
+ |      Function attempts to resolve a domain name to either ipv4 or ipv6 address(es).<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>    (<code>str</code>)  the domain to resolve to ipv4/ipv6<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  extract_ip_from_rrset_query_result(self, rrset: dns.rrset.RRset) -> str
+ |      Function parses the dnspython library rrset datatype, aquired from a name resolution,
+ |      returning the ip address within as a string.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>rrset</strong>        (<code>dns.datatype.rrset</code>) the rrset dns resolution result to parse<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  get_ErrMsgDatabase(self) -> __main__.ErrMsgDatabase
+ |  
+ |  get_registry(self) -> dict
+ |  
+ |  ipv4_resolver(self, domain: str, container: dict) -> None
+ |      Procedure resolves a domain name (<code>str</code>) to an ipv4 address, storing
+ |      the result in a provided python dictionary container. Returns <code>['unresolved']</code> on
+ |      failure.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>        (<code>str</code>)  the domain name to resolve to an ipv4 address<br>
+ |      - <strong>container</strong>     (<code>dict</code>) the result storage structure<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  ipv6_resolver(self, domain: str, container: dict) -> None
+ |      Procedure resolves a domain name (<code>str</code>) to an ipv6 address, Stores
+ |      the result in a provided python dictionary container. Returns <code>['unresolved']</code> on
+ |      failure.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>        (<code>str</code>)  the domain name to resolve to an ipv6 address<br>
+ |      - <strong>container</strong>     (<code>dict</code>) the result storage structure<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  is_valid_query(self, query: str) -> bool
+ |  
+ |  tls_organization_fetcher(self, domain: str, container: dict) -> None
+ |      Procedure returns organization information corresponding to a given domain. Stores the result in the provided
+ |      python dictionary container. Returns <code>['unresolved']</code> on failure.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>        (<code>str</code>)  the domain name to resolve to an ipv4 address<br>
+ |      - <strong>container</strong>     (<code>dict</code>) the result storage structure<br>
+ |      
+ |      Returns:<br>
+ |      - None
+ |  
+ |  tls_ssl_certificate_fetcher(self, domain: str, container: dict) -> None
+ |      Procedure retrieves the ssl/tls certificate corresponding to a provided 
+ |      domain name. Stores a result in the provided python dictionary container. 
+ |      Returns <code>['unresolved']</code> on failure.<br>
+ |      
+ |      Parameters:<br>
+ |      - <strong>domain</strong>     (<code>str</code>)  the domain to query<br>
+ |      - <strong>container</strong>  (<code>dict</code>) the result storage structure<br>
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from DomainQueries:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+
