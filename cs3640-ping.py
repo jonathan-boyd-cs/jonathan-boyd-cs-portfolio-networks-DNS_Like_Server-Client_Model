@@ -128,7 +128,7 @@ def recv_icmp_response() -> dict:
         of the ICMP response, or None if no response is received.
     """
 
-    #Bind the socket to an empty string for 5000
+    #Bind the socket for arbitrary ip with port 5000
     raw_socket = make_icmp_socket(1,5)
     raw_socket.bind(("",5000))
     
