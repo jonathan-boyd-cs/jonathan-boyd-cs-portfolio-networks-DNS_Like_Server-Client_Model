@@ -29,6 +29,7 @@ def main():
     SERVER_SOCKET = (SERVER, SERVER_PORT)
 
     connection_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    connection_socket.settimeout(10)
     connection_socket.connect(SERVER_SOCKET)
 
     transmit(msg=query,outbound_socket=connection_socket)
