@@ -80,3 +80,4 @@ https://stackoverflow.com/questions/1894269/how-to-convert-string-representation
 #### Known Bugs
 - The intelserver implementation demonstrates a threading bug, which requires the double entry of control-C for keyboard interruption. An uncaught error is
 then outputted, corresponding to the threading module-> lock.aquire()
+- (10/31/2024) Investigating a need to implement database lock aquisition in database monitor clearing thread. Considering centralizing the answer for unresolved queries to an environment variable.
