@@ -28,6 +28,9 @@ network-based python modules to implement a client-server-query application. The
 connecting to the server, utilizing the comand-line to pass a desired query on a specified domain name. The server attempts to mimic 
 a caching system, populating a database with query results from client connections, returning information as needed.
 
+### UPDATES
+- Considering refactoring the DomainQuery structure for easier addition and removal of components...
+
 ### How to run <code>cs3640-ping.py</code>
 To run the project file. At the command-line...<br>
 enter command: <code>sudo python3 cs3640-ping.py -destination ('ipv4 address') -n (number of pings to send) -ttl (time to live)</code>
