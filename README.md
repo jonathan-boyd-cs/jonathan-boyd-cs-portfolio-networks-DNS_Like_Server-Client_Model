@@ -29,7 +29,7 @@ connecting to the server, utilizing the comand-line to pass a desired query on a
 a caching system, populating a database with query results from client connections, returning information as needed.
 
 ### UPDATES
-- Considering refactoring the DomainQuery structure for easier addition and removal of components...
+- (11/06/2024) Considering refactoring the DomainQuery structure for easier addition and removal of components...
 
 ### How to run <code>cs3640-ping.py</code>
 To run the project file. At the command-line...<br>
