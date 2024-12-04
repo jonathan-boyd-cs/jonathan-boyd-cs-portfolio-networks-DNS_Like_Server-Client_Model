@@ -2,12 +2,6 @@
 ## Author : Jonathan Boyd
 
 
-### **Credibility** : Cisco CCNA , CompTIA Network + , CompTIA Security + certified.
-
-#### verify
-##### **CCNA** (_b3166ceff8b24529adb2c4de48c0c4c0_)
-##### **Network+** (_DWZJP8N6G1EQQBCL_)
-##### **Security+** (_RGP8QR5RHFV1QECH_)
 
 ## a DNS-like client-server implementation 
 ### (University of Iowa - Networking course assignment)
